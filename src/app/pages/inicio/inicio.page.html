@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title #titulo class="ion-text ion-text-left font-size-18">
+      <div>
+        Sistema de Asistencia DUOC
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div class="book">
+  <ion-content [fullscreen]="true" class="ion-padding-horizontal page" #page>
+    <ion-title class="ion-padding-top">
+      <ion-item>
+        <ion-label>
+          <h1 class="text-center">
+            !Bienvenido(a)  {{usuario.nombre}} {{usuario.apellido}}¡
+          </h1>
+        </ion-label>
+      </ion-item>
+    </ion-title>
+    <b class="ion-text-center">
+      <h4> Mis datos </h4>
+    </b>
+
+    <ion-item #itemCuenta>
+      <ion-input 
+      [(ngModel)]="usuario.cuenta" 
+      labelPlacement="floating" 
+      label="Cuenta" 
+      palceholder="Ej: atorres"></ion-input>
+    </ion-item>
+
+    <ion-item #itemNombre>
+      <ion-input 
+      [(ngModel)]="usuario.nombre" 
+      labelPlacement="floating" 
+      label="Nombre" 
+      palceholder="Ej: Ana"></ion-input>
+    </ion-item>
+
+    <ion-item #itemApellido>
+      <ion-input 
+      [(ngModel)]="usuario.apellido" 
+      labelPlacement="floating" 
+      label="Apellido" 
+      palceholder="Ej: Torres"></ion-input>
+    </ion-item>
+
+    <ion-item #itemEducacion >
+      <ion-label position="floating" >
+        Educacion</ion-label>
+        <br>
+        <ion-select  placeholder="Seleccione nivel"  slot="end" 
+          [(ngModel)]="usuario.nivelEducacional!.id">
+          <ion-select-option 
+              *ngFor="let nivel of listaNivelesEducacionales"
+                [value]="nivel.id" >
+              {{nivel.nombre}}
+          </ion-select-option>
+        </ion-select>
+    </ion-item>
+
+    
+
+    <ion-item #itemFechaNacimiento>
+      <table>
+        <tr>
+          <td class="font-size-12">
+            Nacimiento
+          </td>
+          <td class="cell-align-right">
+            <input matInput [matDatepicker]="fechaNacimiento"
+                   [(ngModel)]="usuario.fechaNacimiento"
+                   placeholder="Ej: dd/mm/yyyy"
+                   class="date-width">
+          </td>
+          <td class="cell-width-0">
+            <mat-datepicker-toggle
+            matSuffix [for]="fechaNacimiento"></mat-datepicker-toggle>
+            <mat-datepicker #fechaNacimiento></mat-datepicker>
+          </td>
+        </tr>
+      </table>
+    </ion-item>
+  
+
+      <ion-row>
+        <ion-col col-3>
+          <ion-button (click)="limpiar1()" shape="block" size="small">
+            Limpiar 1
+          </ion-button>
+        </ion-col>
+        <ion-col col-3>
+          <ion-button (click)="limpiar2()" shape="block" size="small">
+            Limpiar 2
+          </ion-button>
+        </ion-col>
+        <ion-col col-3>
+          <ion-button (click)="createPageTurnAnimation()" shape="block" size="small">
+            Limpiar 2
+          </ion-button>
+        </ion-col>
+        <ion-col col-3>
+          <ion-button (click)="mostrarDatosPersonales()" shape="block" size="small">
+            Mostrar Datos
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+
+  </ion-content>
+</div>
+
