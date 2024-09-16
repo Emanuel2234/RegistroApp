@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="font-size-18">
+      Sistema de Asistencia DUOC
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" #page class="ion-padding-horizontal page">
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary" class="ion-padding-horizontal ion-padding-top ion-padding-bottom">
+    
+    <ion-button shape="round" (click)="navegar('/inicio')" color="tertiary">
+      <ion-icon slot="start" name="home"></ion-icon>
+      Inicio
+    </ion-button>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <ion-button shape="round" (click)="navegar('/leerqr')" color="tertiary">
+      <ion-icon slot="start" name="qr-code"></ion-icon>
+      Asistencia
+    </ion-button>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <ion-button shape="round" (click)="navegar('/login')" color="tertiary">
+      <ion-icon slot="start" name="log-out"></ion-icon>
+      Salir
+    </ion-button>
+
+  </ion-toolbar>
+</ion-footer>

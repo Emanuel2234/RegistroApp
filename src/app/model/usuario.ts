@@ -1,3 +1,4 @@
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { NivelEducacional } from './nivel-educacional';
 import { Persona } from "./persona";
 
@@ -31,6 +32,7 @@ export class Usuario extends Persona {
     this.nivelEducacional = nivelEducacional;
     this.fechaNacimiento = fechaNacimiento;
   }
+
 
   public buscarUsuarioValido(cuenta: string, password: string): Usuario | undefined {
     return Usuario.getListaUsuarios().find(
@@ -127,5 +129,13 @@ export class Usuario extends Persona {
         new Date(2000, 2, 1)
       ),
     ]
+  }
+
+  recibirUsuario(activatedRoute: ActivatedRoute, router: Router) {
+
+  }
+
+  navegarEnviandousuario(router: Router, pagina: string) {
+
   }
 }
